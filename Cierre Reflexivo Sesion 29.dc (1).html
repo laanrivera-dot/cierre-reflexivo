@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Mulish:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap">
+<style>
+body{margin:0;background:#F4F9F8}
+a{color:#0c447c}
+a:hover{color:#001F19}
+@keyframes pop{0%{transform:scale(.96);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:none}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@media print{.noprint{display:none !important}body{background:#fff}}
+</style>
+</helmet>
+<div style="max-width:920px;margin:0 auto;padding:16px 16px 40px;font-family:'Mulish','Segoe UI',Arial,sans-serif;color:#262626;line-height:1.55">
+
+  <div class="noprint" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;border-bottom:2px solid #001F19;padding:4px 4px 12px;margin-bottom:14px">
+    <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#001f19">CRACK THE CODE · CALI AVANZA 2026</div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="font-size:13px;color:#3d4a47">Sesión 29 · Cierre reflexivo · Grado 9°</span>
+      <button onClick="{{ toggleIndex }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;color:#fff;background:#001F19;border:none;border-radius:20px;padding:7px 16px;cursor:pointer">☰ Índice</button>
+    </div>
+  </div>
+
+  <sc-if value="{{ indexOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="noprint" style="background:#fff;border:2px solid #001F19;border-radius:18px;padding:16px 18px;margin-bottom:16px;animation:pop .2s ease-out">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#001f19">Índice · salta a cualquier parte</div>
+        <button onClick="{{ toggleIndex }}" style="border:none;background:#E6F1FB;color:#0c447c;border-radius:14px;padding:4px 12px;font-weight:700;cursor:pointer">✕</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+          <div>
+            <div style="font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:#3d4a47;margin-bottom:6px">{{ g.title }}</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+                <button onClick="{{ it.go }}" style="text-align:left;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;border:1.5px solid #DCEBF7;border-radius:12px;padding:8px 12px;cursor:pointer;background:{{ it.bg }};color:{{ it.fg }}">{{ it.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <div class="noprint" style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+    <div style="flex:1;height:10px;background:#DCEBF7;border-radius:10px;overflow:hidden">
+      <div style="height:100%;width:{{ pct }};background:#001F19;border-radius:10px;transition:width .25s ease-out"></div>
+    </div>
+    <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;color:#001f19;white-space:nowrap">Pantalla {{ screenNum }} de {{ screenTotal }}</div>
+  </div>
+
+  <sc-if value="{{ p0 }}" hint-placeholder-val="{{ true }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:24px;padding:44px 30px;text-align:center">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:.22em;color:#6BE3D7">🏁 SESIÓN 29 · CIERRE REFLEXIVO</div>
+        <div style="font-family:'Lora',Georgia,serif;font-size:44px;color:#fff;margin:16px 0 10px;line-height:1.1">Miren todo lo que construyeron</div>
+        <p style="max-width:620px;margin:0 auto 22px;color:#daf2f0;font-size:16px">Del problema que eligieron en el Capítulo 1 a una app presentada en el Demo Day final. Hoy miran hacia atrás en equipo, conocen los proyectos de los demás y se despiden del curso.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;max-width:700px;margin:0 auto;text-align:left">
+          <div style="background:#0b2e27;border-radius:14px;padding:12px 14px;color:#daf2f0;font-size:13.5px"><strong style="display:block;color:#6BE3D7;font-family:'Poppins',sans-serif;font-size:14px">🗺️ Recorrido</strong>Los 4 capítulos, en orden.</div>
+          <div style="background:#0b2e27;border-radius:14px;padding:12px 14px;color:#daf2f0;font-size:13.5px"><strong style="display:block;color:#FFD34D;font-family:'Poppins',sans-serif;font-size:14px">🎮 Juegos</strong>Trivia, ruleta y stats.</div>
+          <div style="background:#0b2e27;border-radius:14px;padding:12px 14px;color:#daf2f0;font-size:13.5px"><strong style="display:block;color:#FFAF85;font-family:'Poppins',sans-serif;font-size:14px">🖼️ Galería</strong>Los proyectos de todos.</div>
+          <div style="background:#0b2e27;border-radius:14px;padding:12px 14px;color:#daf2f0;font-size:13.5px"><strong style="display:block;color:#D6ADFF;font-family:'Poppins',sans-serif;font-size:14px">🎉 Despedida</strong>Para celebrar lo logrado.</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #DCEBF7;border-radius:20px;padding:20px 22px;margin-top:16px">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#001f19;margin-bottom:14px">🗺️ Todo su camino</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:stretch">
+          <sc-for list="{{ path }}" as="s" hint-placeholder-count="6">
+            <div style="flex:1 1 120px;min-width:0;border-radius:14px;padding:10px 12px;background:{{ s.bg }};color:{{ s.fg }};border:2px solid {{ s.bd }}">
+              <div style="font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em">{{ s.tag }}</div>
+              <div style="font-family:'Lora',serif;font-size:15.5px;font-weight:600;line-height:1.2;margin-top:2px">{{ s.name }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:10px;border:2px dashed #756DC8;border-radius:14px;padding:9px 14px;font-size:14px;color:#2d2560"><strong>En paralelo, todo el año:</strong> contenido socio-ocupacional "Diseña tu plan de vida" (no es un capítulo).</div>
+      </div>
+      <div style="background:#FFF3C4;border:2px solid #E0A400;border-radius:20px;padding:20px 22px;margin-top:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;color:#6b4e00">ANTES DE ARRANCAR</div>
+        <div style="font-family:'Lora',serif;font-size:24px;font-weight:600;color:#001f19;margin:4px 0 12px">¿Entregaron el proyecto en el Campus?</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ checkOpts }}" as="o" hint-placeholder-count="3">
+            <button onClick="{{ o.pick }}" style="text-align:left;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid #001F19;border-radius:14px;padding:12px 16px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }}">{{ o.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ checkShown }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:12px;background:#fff;border-radius:14px;padding:12px 16px;font-size:15px;color:#001f19">{{ checkMsg }}</div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p1 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:20px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:#6BE3D7;font-weight:700">🗺️ EL CAMINO</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#fff;margin-top:4px">Su viaje, en orden</div>
+      </div>
+      <div style="background:#E6F1FB;border-radius:14px;padding:12px 18px;margin-bottom:14px;font-size:15.5px;color:#0c447c">🧩 <strong>En equipo:</strong> toquen las paradas en el orden en que las vivieron. Si se equivocan, la tarjeta tiembla y pueden intentar otra.</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px">
+        <sc-for list="{{ order }}" as="o" hint-placeholder-count="8">
+          <button onClick="{{ o.tap }}" style="text-align:left;display:flex;gap:12px;align-items:center;font-family:'Mulish',sans-serif;font-size:15px;border:2px solid {{ o.bd }};border-radius:14px;padding:12px 14px;cursor:pointer;background:{{ o.bg }};color:#001f19;animation:{{ o.anim }}">
+            <span style="flex:0 0 34px;height:34px;border-radius:50%;background:{{ o.numBg }};color:{{ o.numFg }};font-family:'Poppins',sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center">{{ o.num }}</span>
+            <span>{{ o.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ orderDone }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:16px;background:#DAF2F0;border-radius:18px;padding:18px 20px;animation:pop .25s ease-out">
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:#001f19">🗺️ ¡Recorrido completo!</div>
+          <div style="font-size:15px;color:#04342c;margin-top:4px">Cuatro capítulos, un solo proyecto. Cada misión dejó algo en su bitácora.</div>
+          <div style="margin-top:14px;background:#fff;border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:12px">
+            <div style="flex:1 1 280px;font-size:15px;color:#001f19">🎲 <strong>En equipo · 5 minutos:</strong> por cada capítulo, digan en voz alta el momento más difícil y el más divertido.</div>
+            <div style="font-family:'Lora',serif;font-size:32px;font-weight:700;color:#001f19;min-width:90px;text-align:center">{{ timerText }}</div>
+            <button onClick="{{ timerToggle }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#001f19;background:#6BE3D7;border:2px solid #001F19;border-radius:22px;padding:9px 18px;cursor:pointer">{{ timerLabel }}</button>
+            <button onClick="{{ timerReset }}" aria-label="Reiniciar tiempo" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#0c447c;background:#E6F1FB;border:none;border-radius:22px;padding:9px 14px;cursor:pointer">↺</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p2 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:20px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:#6BE3D7;font-weight:700">⏪ REBOBINA</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#fff;margin-top:4px">Los 4 capítulos de su proyecto</div>
+      </div>
+      <div style="background:#E6F1FB;border-radius:14px;padding:12px 18px;margin-bottom:14px;font-size:15.5px;color:#0c447c"><strong>En equipo:</strong> una persona voltea la tarjeta y la lee en voz alta. Respondan la pregunta conversando y marquen <strong>"Lo recordamos"</strong>.</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px">
+        <sc-for list="{{ cards }}" as="c" hint-placeholder-count="4">
+          <div style="border-radius:18px;border:2px solid #001F19;background:{{ c.bg }};padding:16px;display:flex;flex-direction:column;gap:10px;min-height:230px">
+            <div onClick="{{ c.flip }}" style="cursor:pointer;flex:1;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+                <span style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;color:#001f19">{{ c.tag }}</span>
+                <span style="font-size:11.5px;font-weight:700;color:#001f19;background:#fff;border-radius:12px;padding:2px 9px">{{ c.hint }}</span>
+              </div>
+              <div style="font-family:'Lora',serif;font-size:22px;font-weight:600;color:#001f19;line-height:1.15">{{ c.title }}</div>
+              <sc-if value="{{ c.open }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:14px;color:#1c2b28">{{ c.did }}</div>
+                <div style="font-size:14px;color:#001f19;font-weight:700;background:rgba(255,255,255,.75);border-radius:10px;padding:8px 10px">🗣 {{ c.q }}</div>
+              </sc-if>
+            </div>
+            <button onClick="{{ c.mark }}" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;border:2px solid #001F19;border-radius:20px;padding:7px 12px;cursor:pointer;background:{{ c.btnBg }};color:{{ c.btnFg }}">{{ c.btnLabel }}</button>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:16px;border:2px dashed #756DC8;border-radius:18px;padding:16px 18px;background:#fff">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:8px">
+          <span style="font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:#fff;background:#756DC8;border-radius:12px;padding:3px 10px">EN PARALELO · NO ES UN CAPÍTULO</span>
+          <span style="font-family:'Lora',serif;font-size:19px;font-weight:600;color:#001f19">Contenido socio-ocupacional: Diseña tu plan de vida</span>
+        </div>
+        <div style="font-size:14.5px;color:#2d2560;margin-bottom:10px">Mientras construían la app, también trabajaron en ustedes. Cada integrante toca una actividad que recuerde y cuenta en una frase qué se llevó de ella.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ socio }}" as="a" hint-placeholder-count="9">
+            <button onClick="{{ a.toggle }}" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;border:1.5px solid #756DC8;border-radius:20px;padding:6px 13px;cursor:pointer;background:{{ a.bg }};color:{{ a.fg }}">{{ a.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p3 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:20px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:#6BE3D7;font-weight:700">🪞 ANTES Y DESPUÉS</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#fff;margin-top:4px">Del Capítulo 1 al Demo Day final</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px">
+        <div style="background:#FFE4D6;border-radius:18px;padding:16px 18px">
+          <div style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;color:#5a2a10">📅 EJEMPLO · CAPÍTULO 1</div>
+          <div style="font-family:'Lora',serif;font-size:18px;color:#001f19;margin-top:6px;line-height:1.35">«En el colegio, muchos compañeros olvidan las fechas de entrega de las tareas.»</div>
+        </div>
+        <div style="background:#DAF2F0;border-radius:18px;padding:16px 18px">
+          <div style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;color:#04342c">🏆 EJEMPLO · DEMO DAY FINAL</div>
+          <div style="font-family:'Lora',serif;font-size:18px;color:#001f19;margin-top:6px;line-height:1.35">«Nuestra app registra cada tarea con su fecha y la muestra en una pantalla que todo el salón puede consultar.»</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:2px solid #001F19;border-radius:18px;padding:16px 18px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#001f19">📖 Lectura del equipo</div>
+        <div style="font-size:15px;color:#262626;margin-top:4px">Abran su bitácora. Una persona lee en voz alta el problema que definieron en el Capítulo 1 y otra lee cómo presentaron la app en el Demo Day final. Después, cada integrante completa en voz alta: <strong>«Lo que más cambió desde el Capítulo 1 fue ___»</strong>.</div>
+      </div>
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#001f19;margin-bottom:8px">Ya podemos… <span style="font-weight:600;font-size:13.5px;color:#4a5a57">toquen lo que el equipo sí sabe hacer hoy</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px">
+        <sc-for list="{{ canDo }}" as="c" hint-placeholder-count="8">
+          <button onClick="{{ c.toggle }}" style="text-align:left;display:flex;gap:10px;align-items:center;font-family:'Mulish',sans-serif;font-size:14.5px;border:2px solid #001F19;border-radius:12px;padding:10px 12px;cursor:pointer;background:{{ c.bg }};color:{{ c.fg }}"><span style="font-size:16px">{{ c.box }}</span><span>{{ c.label }}</span></button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ canDoAll }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:12px;background:#6BE3D7;border-radius:14px;padding:12px 16px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#001f19;animation:pop .25s ease-out">🌟 ¡Miren todo lo que aprendieron! Estas habilidades sirven mucho más allá de este curso.</div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p4 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:20px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:#FFD34D;font-weight:700">🎮 TRIVIA DEL AÑO</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#fff;margin-top:4px">¿Cuánto recuerda el equipo?</div>
+      </div>
+      <div style="background:#FFF3C4;border-radius:14px;padding:12px 18px;margin-bottom:14px;font-size:15.5px;color:#4a3a00"><strong>En equipo:</strong> discutan 30 segundos y elijan <strong>una sola respuesta</strong>. Solo hay un intento por pregunta.</div>
+      <div style="background:#fff;border:2px solid #001F19;border-radius:20px;padding:22px 24px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px">
+          <span style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;color:#3d4a47">PREGUNTA {{ qNum }} DE {{ qTotal }}</span>
+        </div>
+        <div style="font-family:'Lora',serif;font-size:24px;font-weight:600;color:#001f19;line-height:1.25;margin-bottom:16px">{{ q.text }}</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
+          <sc-for list="{{ q.opts }}" as="o" hint-placeholder-count="4">
+            <button onClick="{{ o.pick }}" style="text-align:left;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid {{ o.bd }};border-radius:14px;padding:14px 16px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }}">{{ o.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ q.answered }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:14px;border-radius:14px;padding:12px 16px;background:{{ q.fbBg }};color:#001f19;font-size:15px"><strong>{{ q.fbTitle }}</strong> {{ q.why }}</div>
+          <sc-if value="{{ q.hasNext }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top:12px;text-align:right">
+              <button onClick="{{ nextQ }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#fff;background:#001F19;border:none;border-radius:22px;padding:10px 22px;cursor:pointer">Siguiente pregunta →</button>
+            </div>
+          </sc-if>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p5 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:20px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:#FFAF85;font-weight:700">🎡 LA RULETA</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#fff;margin-top:4px">Preguntas para conversar</div>
+      </div>
+      <div style="background:#FFE4D6;border-radius:14px;padding:12px 18px;margin-bottom:14px;font-size:15.5px;color:#5a2a10"><strong>En equipo:</strong> giren la ruleta. Cada integrante responde en voz alta en máximo 1 minuto. Hagan al menos 4 giros.</div>
+      <div style="background:#fff;border:2px solid #001F19;border-radius:20px;padding:26px 22px;text-align:center">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;color:#3d4a47;margin-bottom:12px">GIRO {{ spins }} · {{ spinHint }}</div>
+        <div style="min-height:120px;display:flex;align-items:center;justify-content:center;background:#FFE4D6;border-radius:18px;padding:22px;margin-bottom:18px">
+          <div style="font-family:'Lora',serif;font-size:27px;font-weight:600;color:#001f19;line-height:1.25;max-width:640px">{{ spinText }}</div>
+        </div>
+        <button onClick="{{ spin }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#001f19;background:#FFAF85;border:2px solid #001F19;border-radius:28px;padding:13px 30px;cursor:pointer" style-hover="background:#FF9C65" style-active="transform:scale(.98)">🎡 Girar la ruleta</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p6 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:20px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:#B6E2FF;font-weight:700">📊 STATS DEL EQUIPO</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#fff;margin-top:4px">¿En qué subieron de nivel?</div>
+      </div>
+      <div style="background:#E6F1FB;border-radius:14px;padding:12px 18px;margin-bottom:14px;font-size:15.5px;color:#0c447c"><strong>En equipo:</strong> por turnos, cada integrante toca <strong>+1</strong> en la habilidad en la que más creció y lo explica con un ejemplo del proyecto.</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+        <sc-for list="{{ skills }}" as="k" hint-placeholder-count="6">
+          <div style="background:#fff;border:1px solid #DCEBF7;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+            <div>
+              <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#001f19">{{ k.icon }} {{ k.name }}</div>
+              <div style="font-size:13.5px;color:#4a5a57">{{ k.desc }}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <button onClick="{{ k.dec }}" aria-label="Quitar voto" style="width:38px;height:38px;border-radius:10px;border:2px solid #001F19;background:#fff;color:#001f19;font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;cursor:pointer">−</button>
+              <div style="flex:1;height:14px;background:#DCEBF7;border-radius:10px;overflow:hidden"><div style="height:100%;width:{{ k.w }};background:#001F19;border-radius:10px;transition:width .2s ease-out"></div></div>
+              <div style="font-family:'Lora',serif;font-size:22px;font-weight:700;color:#001f19;min-width:24px;text-align:center">{{ k.val }}</div>
+              <button onClick="{{ k.inc }}" aria-label="Sumar voto" style="height:38px;border-radius:10px;border:2px solid #001F19;background:#001F19;color:#6BE3D7;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;padding:0 14px;cursor:pointer">+1</button>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p7 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:20px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:#FFAF85;font-weight:700">🖼️ GALERÍA</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#fff;margin-top:4px">Conozcan los proyectos de todos</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #DCEBF7;border-radius:16px;padding:14px 16px"><span style="flex:0 0 36px;height:36px;border-radius:50%;background:#001F19;color:#6BE3D7;font-family:'Lora',serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center">1</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15.5px;color:#001f19">Cada equipo deja su app a la vista</div><div style="font-size:14.5px;color:#4a5a57">Abierta en un dispositivo, en el tablero o proyectada.</div></div></div>
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #DCEBF7;border-radius:16px;padding:14px 16px"><span style="flex:0 0 36px;height:36px;border-radius:50%;background:#001F19;color:#6BE3D7;font-family:'Lora',serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center">2</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15.5px;color:#001f19">Visiten al menos 2 proyectos de otros equipos</div><div style="font-size:14.5px;color:#4a5a57">Úsenlos como lo haría un usuario: registren un dato, recorran las pantallas.</div></div></div>
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #DCEBF7;border-radius:16px;padding:14px 16px"><span style="flex:0 0 36px;height:36px;border-radius:50%;background:#001F19;color:#6BE3D7;font-family:'Lora',serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center">3</span><div><div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15.5px;color:#001f19">Díganles en voz alta su feedback</div><div style="font-size:14.5px;color:#4a5a57">«Me gustó ___» y «Podrían probar ___». Siempre con respeto.</div></div></div>
+      </div>
+      <div style="margin-top:14px;background:#FFF3C4;border:2px solid #E0A400;border-radius:18px;padding:16px 18px">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#001f19;margin-bottom:8px">👏 Reconocimientos del salón <span style="font-weight:600;font-size:13.5px;color:#6b4e00">(sin ganadores, solo aplausos)</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="background:#fff;border-radius:12px;padding:8px 12px;font-size:14.5px;color:#001f19">¿Qué equipo cambió más su idea desde el Capítulo 1?</span>
+          <span style="background:#fff;border-radius:12px;padding:8px 12px;font-size:14.5px;color:#001f19">¿Qué mejora les pareció más ingeniosa?</span>
+          <span style="background:#fff;border-radius:12px;padding:8px 12px;font-size:14.5px;color:#001f19">¿Qué app usarían de verdad?</span>
+          <span style="background:#fff;border-radius:12px;padding:8px 12px;font-size:14.5px;color:#001f19">¿Qué equipo contó mejor su historia en el Demo Day?</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p8 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:20px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:#D6ADFF;font-weight:700">🎉 DESPEDIDA</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#fff;margin-top:4px">Una palabra, un recuerdo</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+        <div style="background:#EFE3FF;border-radius:18px;padding:16px 18px">
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#001f19">☁️ Nube de palabras</div>
+          <div style="font-size:14.5px;color:#2d2560;margin-top:4px">Cada persona dice una sola palabra que describa este curso. El profe las escribe en el tablero. Miren la nube que armaron juntos. 📸 ¡Tómenle foto!</div>
+        </div>
+        <div style="background:#DAF2F0;border-radius:18px;padding:16px 18px">
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#001f19">💌 Gracias al equipo</div>
+          <div style="font-size:14.5px;color:#04342c;margin-top:4px">Cada integrante le dice a un compañero de su equipo: «Gracias por ___». Un proyecto así no se hace solo.</div>
+        </div>
+      </div>
+      <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#001f19;margin:18px 0 8px">🚀 Lo que sigue · toquen para descubrir</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+        <sc-for list="{{ reveals }}" as="r" hint-placeholder-count="4">
+          <button onClick="{{ r.toggle }}" style="text-align:left;border:2px solid #001F19;border-radius:16px;padding:14px 16px;cursor:pointer;background:{{ r.bg }};min-height:110px;display:flex;flex-direction:column;gap:6px">
+            <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15.5px;color:#001f19">{{ r.title }}</span>
+            <span style="font-size:14px;color:#1c2b28">{{ r.text }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ p9 }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:pop .25s ease-out">
+      <div style="background:#001F19;border-radius:24px;padding:28px;color:#fff">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:14px;border-bottom:1px solid rgba(107,227,215,.35);padding-bottom:16px;margin-bottom:18px">
+          <div>
+            <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.18em;color:#6BE3D7;font-weight:700">🏁 CIERRE DEL CURSO · GRADO 9°</div>
+            <div style="font-family:'Lora',serif;font-size:38px;line-height:1.1;margin-top:6px">¡Gracias, cracks!</div>
+            <div style="font-size:15px;color:#daf2f0;margin-top:6px;max-width:520px">Del problema del Capítulo 1 a una app construida, testeada y presentada. Eso lo hicieron ustedes.</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px">
+          <div style="background:#0b2e27;border-radius:14px;padding:12px 14px"><div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.12em;color:#6BE3D7;font-weight:700">CAPÍTULOS</div><div style="font-family:'Lora',serif;font-size:24px">{{ remembered }}/4</div></div>
+          <div style="background:#0b2e27;border-radius:14px;padding:12px 14px"><div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.12em;color:#6BE3D7;font-weight:700">YA PODEMOS</div><div style="font-family:'Lora',serif;font-size:24px">{{ canDoCount }}/8</div></div>
+          <div style="background:#0b2e27;border-radius:14px;padding:12px 14px"><div style="font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.12em;color:#FFAF85;font-weight:700">RULETA</div><div style="font-family:'Lora',serif;font-size:24px">{{ spins }} giros</div></div>
+        </div>
+        <div style="background:#0b2e27;border-radius:16px;padding:14px 16px;font-size:15px"><strong style="color:#6BE3D7">Superpoder del equipo:</strong> {{ topSkill }}</div>
+        <div style="margin-top:14px;background:#6BE3D7;color:#001f19;border-radius:16px;padding:16px 18px">
+          <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.12em;font-weight:700;margin-bottom:4px">RONDA FINAL · EN VOZ ALTA</div>
+          <div style="font-family:'Lora',serif;font-size:20px;line-height:1.35">Cada integrante completa la frase: "Este año aprendí que…"</div>
+        </div>
+        <div style="margin-top:14px;border:1.5px solid rgba(107,227,215,.5);border-radius:16px;padding:14px 16px;font-size:15px;color:#daf2f0"><strong style="color:#fff">Lo que sigue:</strong> en la próxima sesión, <strong style="color:#6BE3D7">Mi perfil de usuario PRO</strong>, integran todo lo que trabajaron en el contenido socio-ocupacional en un solo perfil.</div>
+      </div>
+      <div class="noprint" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px">
+        <button onClick="{{ reset }}" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;color:#0c447c;background:#E6F1FB;border:none;border-radius:24px;padding:12px 22px;cursor:pointer">↺ Reiniciar para otro equipo</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <div class="noprint" style="display:flex;justify-content:space-between;gap:10px;margin-top:24px">
+    <button onClick="{{ prev }}" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;color:#0c447c;background:#E6F1FB;border:none;border-radius:24px;padding:11px 22px;cursor:pointer;visibility:{{ prevVis }}">◀ Volver</button>
+    <sc-if value="{{ notLast }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ next }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#001f19;background:#6BE3D7;border:none;border-radius:24px;padding:11px 26px;cursor:pointer" style-hover="background:#4fd0c3">{{ nextLabel }}</button>
+    </sc-if>
+  </div>
+
+  <div style="background:#001F19;border-radius:18px;padding:20px 26px;text-align:center;margin-top:28px">
+    <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#6BE3D7;letter-spacing:.14em">CRACK THE CODE · CALI AVANZA 2026</div>
+    <div style="font-size:12.5px;color:#daf2f0;margin-top:6px">Sesión 29 · Cierre del curso · Cierre reflexivo · Grado 9°</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const KEY = 'ctc-cierre-reflexivo-s29-v3';
+const SCREENS = ['🚀 Inicio', '🗺️ El camino', '⏪ Rebobina', '🪞 Antes y después', '🎮 Trivia', '🎡 Ruleta', '📊 Stats del equipo', '🖼️ Galería', '🎉 Despedida', '🏁 Cierre'];
+const GROUPS = [['1 · RECORRIDO', [0, 1, 2, 3]], ['2 · JUEGOS', [4, 5, 6]], ['3 · CIERRE', [7, 8, 9]]];
+const NEXT = ['¡Miremos atrás! ▶', 'Rebobina ▶', 'Antes y después ▶', 'La trivia ▶', 'La ruleta ▶', 'Stats del equipo ▶', 'La galería ▶', 'Despedida ▶', 'Cierre ▶'];
+const PATH = [['INICIO', 'Activación y ruta del curso'], ['CAPÍTULO 1', 'Diagnostica y comprende'], ['CAPÍTULO 2', 'Construye y crea'], ['CAPÍTULO 3', 'Mejora y testea'], ['CAPÍTULO 4', 'Presenta e impacta'], ['HOY', '📍 Cierre reflexivo']];
+const CHECK = [
+  ['✅ Sí, entregamos y confirmamos la entrega', '¡Genial! Sigan adelante.'],
+  ['📤 Todavía no entregamos', 'Háganlo hoy: vuelvan a la sesión "Entrega de proyecto" en el Campus y avísenle a su profe.'],
+  ['🤔 Entregamos, pero no sabemos si quedó', 'Revisen en el Campus que la entrega aparezca como enviada. Si no, avísenle a su profe hoy mismo.']
+];
+const STOPS = [
+  '🧭 Conocieron la ruta del curso y eligieron su misión',
+  '🔐 Analizaron apps reales en el Escape Room',
+  '🎯 Definieron un problema real y planificaron la app',
+  '🗃️ Crearon la base de datos de la app',
+  '📱 Diseñaron pantallas y agregaron un formulario',
+  '📤 Enviaron la bitácora en el primer Demo Day',
+  '🧪 Probaron la app y la mejoraron con feedback',
+  '🎤 Contaron su historia en el Demo Day final'
+];
+const SHUFFLE = [4, 1, 7, 2, 6, 0, 5, 3];
+const CARDS = [
+  { tag: 'CAPÍTULO 1', title: 'Diagnostica y comprende', bg: '#DAF2F0', did: 'Eligieron su misión, analizaron cómo nacen las apps en el Escape Room, definieron un problema real y planificaron su app.', q: '¿Qué problema eligieron y por qué les importó?' },
+  { tag: 'CAPÍTULO 2', title: 'Construye y crea', bg: '#E6F1FB', did: 'Exploraron la plataforma, crearon la base de datos, diseñaron las pantallas, agregaron un formulario y enviaron la bitácora en el Demo Day.', q: '¿Qué parte de la construcción les costó más y cuál disfrutaron?' },
+  { tag: 'CAPÍTULO 3', title: 'Mejora y testea', bg: '#FFF3C4', did: 'Revisaron si la app resolvía el problema, la mejoraron con el feedback de otro equipo y reconocieron el rol de cada uno.', q: '¿Qué cambiaron de la app gracias al feedback?' },
+  { tag: 'CAPÍTULO 4', title: 'Presenta e impacta', bg: '#FFE4D6', did: 'Prepararon la presentación con storytelling, presentaron en el Demo Day final y entregaron el proyecto.', q: '¿Cómo se sintieron presentando frente a otros?' }
+];
+const SOCIO = ['¿Quién eres en el juego?', 'Conectando pasión y acción', 'El tráiler de tu vida', 'Carta a mi Yo Futuro', 'Escáner de personalidad', 'Mi mapa de tesoros', 'Desbloqueando tus superpoderes', 'Código de honor y reglas', 'Roadmap de vida y debugging'];
+const CANDO = ['Distinguir un problema real de una idea que "suena bien"', 'Planificar una app: recursos, aliados y cómo se mantiene', 'Crear una base de datos para una app', 'Diseñar pantallas y un formulario que registre datos', 'Probar la app y mejorarla con feedback', 'Presentar un proyecto contando una historia', 'Reconocer mis fortalezas, intereses y valores', 'Trazar un roadmap para mi plan de vida'];
+const CH = ['Capítulo 1: Diagnostica y comprende', 'Capítulo 2: Construye y crea', 'Capítulo 3: Mejora y testea', 'Capítulo 4: Presenta e impacta'];
+const QUIZ = [
+  { text: '¿En qué capítulo analizaron apps reales en el Escape Room y definieron el problema de su app?', opts: CH, a: 0, why: 'En el Capítulo 1 diagnosticaron y comprendieron el problema antes de construir.' },
+  { text: '¿En qué capítulo crearon la base de datos y diseñaron las pantallas de la app?', opts: CH, a: 1, why: 'En el Capítulo 2 construyeron la app paso a paso.' },
+  { text: '¿En qué capítulo revisaron si la app resolvía el problema con el feedback de otro equipo?', opts: CH, a: 2, why: 'En el Capítulo 3 mejoraron y testearon la app.' },
+  { text: '¿En qué capítulo prepararon la presentación contando la historia de la app?', opts: CH, a: 3, why: 'En el Capítulo 4 presentaron e impactaron con storytelling.' },
+  { text: '¿Cuál de estos NO fue un capítulo del curso?', opts: ['Diagnostica y comprende', 'Construye y crea', 'Diseña tu plan de vida', 'Presenta e impacta'], a: 2, why: '"Diseña tu plan de vida" es el contenido socio-ocupacional: lo trabajaron en paralelo a los 4 capítulos.' },
+  { text: 'En el contenido socio-ocupacional, ¿qué actividad les pidió convertir sus valores en reglas propias?', opts: ['Mi mapa de tesoros', 'Código de honor y reglas', 'El tráiler de tu vida', 'Escáner de personalidad'], a: 1, why: 'En "Código de honor y reglas" bajaron sus valores a reglas concretas.' },
+  { text: '¿Qué actividad socio-ocupacional les ayudó a diferenciar hard skills de soft skills?', opts: ['Desbloqueando tus superpoderes', 'Carta a mi Yo Futuro', 'Conectando pasión y acción', 'Roadmap de vida y debugging'], a: 0, why: 'En "Desbloqueando tus superpoderes" identificaron sus habilidades más fuertes.' }
+];
+const SPIN = [
+  '¿Qué momento del proyecto los hizo sentir más orgullosos como equipo?',
+  '¿Cuál fue el "bug" más difícil que enfrentaron y cómo lo resolvieron?',
+  '¿Qué habilidad descubrió cada uno que tenía?',
+  '¿Qué aprendieron que puedan usar fuera del colegio?',
+  'De las actividades socio-ocupacionales, ¿cuál los dejó pensando más y por qué?',
+  '¿Qué consejo le darían a un equipo que empieza el curso el próximo año?',
+  '¿Qué le dirían a su yo del primer día del curso?',
+  '¿Qué harían distinto si empezaran la app otra vez?',
+  '¿Quién del equipo los ayudó más y cómo?',
+  '¿Qué les gustaría seguir aprendiendo después de este curso?'
+];
+const SKILLS = [
+  { key: 'crea', icon: '💡', name: 'Creatividad', desc: 'Proponer ideas nuevas para resolver un problema.' },
+  { key: 'equipo', icon: '🤝', name: 'Trabajo en equipo', desc: 'Repartir roles, escuchar y cumplir con su parte.' },
+  { key: 'prob', icon: '🧩', name: 'Resolver problemas', desc: 'Encontrar la falla y probar hasta que funcione.' },
+  { key: 'com', icon: '🎤', name: 'Comunicar ideas', desc: 'Presentar el proyecto de forma clara y con historia.' },
+  { key: 'tech', icon: '📱', name: 'Crear con tecnología', desc: 'Construir una app con datos, pantallas y formularios.' },
+  { key: 'yo', icon: '🧭', name: 'Conocerme a mí mismo', desc: 'Saber qué me gusta, en qué soy bueno y qué valoro.' }
+];
+const REVEALS = [
+  ['🚀 Guárdenlo', 'Su app es una prueba real de lo que saben hacer.', '#DAF2F0'],
+  ['📁 Muéstrenlo', 'Pueden incluir el proyecto en una hoja de vida o un portafolio.', '#E6F1FB'],
+  ['🛠 Sigan creando', 'Las herramientas que usaron tienen versión gratuita.', '#FFF3C4'],
+  ['🧭 Su plan sigue', 'El plan de vida no termina aquí: se revisa y se ajusta con el tiempo.', '#EFE3FF']
+];
+const INIT = { p: 0, idx: false, chk: -1, got: 0, wrong: -1, open: {}, mark: {}, socio: {}, can: {}, qi: 0, ans: {}, spins: 0, spinIdx: -1, used: [], sk: {}, rev: {} };
+
+class Component extends DCLogic {
+  state = { ...this.load(), t: 300, run: false };
+  load() { try { const s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s) return { ...INIT, ...s }; } catch (e) {} return { ...INIT }; }
+  save(p) { this.setState(p, () => { try { const { t, run, ...rest } = this.state; localStorage.setItem(KEY, JSON.stringify(rest)); } catch (e) {} }); }
+  go(n) { this.save({ p: Math.max(0, Math.min(SCREENS.length - 1, n)), idx: false }); try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {} }
+  componentWillUnmount() { clearInterval(this.timer); }
+  toggleTimer() {
+    if (this.state.run) { clearInterval(this.timer); this.setState({ run: false }); return; }
+    if (this.state.t <= 0) this.setState({ t: 300 });
+    this.setState({ run: true });
+    clearInterval(this.timer);
+    this.timer = setInterval(() => { const t = this.state.t - 1; if (t <= 0) { clearInterval(this.timer); this.setState({ t: 0, run: false }); } else this.setState({ t }); }, 1000);
+  }
+  renderVals() {
+    const s = this.state;
+    const on = x => ({ bg: x ? '#001F19' : '#FFFFFF', fg: x ? '#6BE3D7' : '#001F19' });
+    const pv = {}; SCREENS.forEach((_, i) => pv['p' + i] = s.p === i);
+    const groups = GROUPS.map(([title, ids]) => ({ title, items: ids.map(i => ({ label: SCREENS[i], bg: s.p === i ? '#001F19' : '#F4F9F8', fg: s.p === i ? '#6BE3D7' : '#001F19', go: () => this.go(i) })) }));
+    const path = PATH.map(([tag, name], i) => { const last = i === PATH.length - 1; return { tag: last ? tag : '✓ ' + tag, name, bg: last ? '#6BE3D7' : '#F4F9F8', fg: '#001F19', bd: last ? '#001F19' : '#DCEBF7' }; });
+    const checkOpts = CHECK.map(([label], i) => ({ label, ...on(s.chk === i), pick: () => this.save({ chk: i }) }));
+    const order = SHUFFLE.map(si => {
+      const done = si < s.got; const isWrong = s.wrong === si;
+      return { label: STOPS[si], num: done ? si + 1 : '?', bg: done ? '#DAF2F0' : isWrong ? '#FFE4D6' : '#FFFFFF', bd: done ? '#3fbbac' : isWrong ? '#FF9C65' : '#001F19',
+        numBg: done ? '#001F19' : '#DCEBF7', numFg: done ? '#6BE3D7' : '#001F19', anim: isWrong ? 'shake .35s ease-out' : 'none',
+        tap: () => { if (done) return; if (si === s.got) this.save({ got: s.got + 1, wrong: -1 }); else { this.setState({ wrong: -1 }, () => this.setState({ wrong: si })); } } };
+    });
+    const cards = CARDS.map((c, i) => ({ ...c, open: !!s.open[i], hint: s.open[i] ? 'Volteada' : 'Toca para ver',
+      flip: () => this.save({ open: { ...s.open, [i]: !s.open[i] } }),
+      mark: () => this.save({ mark: { ...s.mark, [i]: !s.mark[i] }, open: { ...s.open, [i]: true } }),
+      btnLabel: s.mark[i] ? '✓ Lo recordamos' : 'Lo recordamos', btnBg: on(s.mark[i]).bg, btnFg: on(s.mark[i]).fg }));
+    const socio = SOCIO.map((x, i) => ({ label: x, bg: s.socio[i] ? '#756DC8' : '#FFFFFF', fg: s.socio[i] ? '#FFFFFF' : '#2d2560', toggle: () => this.save({ socio: { ...s.socio, [i]: !s.socio[i] } }) }));
+    const canDo = CANDO.map((x, i) => ({ label: x, box: s.can[i] ? '✅' : '⬜', bg: s.can[i] ? '#DAF2F0' : '#FFFFFF', fg: '#001F19', toggle: () => this.save({ can: { ...s.can, [i]: !s.can[i] } }) }));
+    const canDoCount = Object.values(s.can).filter(Boolean).length;
+    const Q = QUIZ[s.qi]; const picked = s.ans[s.qi]; const answered = picked !== undefined;
+    const q = { text: Q.text, answered, hasNext: s.qi < QUIZ.length - 1, why: Q.why,
+      fbTitle: answered ? (picked === Q.a ? '¡Correcto!' : 'Casi.') : '', fbBg: answered && picked === Q.a ? '#DAF2F0' : '#FFE4D6',
+      opts: Q.opts.map((o, i) => { let bg = '#FFFFFF', fg = '#001F19', bd = '#001F19';
+        if (answered) { if (i === Q.a) bg = '#6BE3D7'; else if (i === picked) { bg = '#FFD1BF'; bd = '#FF9C65'; } else { fg = '#6b7875'; bd = '#C9D6D3'; } }
+        return { label: o, bg, fg, bd, pick: () => { if (!answered) this.save({ ans: { ...s.ans, [s.qi]: i } }); } }; }) };
+    const score = Object.entries(s.ans).filter(([k, v]) => QUIZ[k] && QUIZ[k].a === v).length;
+    const maxV = Math.max(4, ...SKILLS.map(k => s.sk[k.key] || 0));
+    const skills = SKILLS.map(k => { const val = s.sk[k.key] || 0; return { ...k, val, w: Math.round(val / maxV * 100) + '%',
+      inc: () => this.save({ sk: { ...s.sk, [k.key]: val + 1 } }), dec: () => this.save({ sk: { ...s.sk, [k.key]: Math.max(0, val - 1) } }) }; });
+    const top = [...skills].sort((a, b) => b.val - a.val);
+    const topSkill = top[0].val ? top.filter(x => x.val === top[0].val).map(x => x.name).join(' + ') : 'voten en "Stats del equipo" para descubrirlo';
+    const reveals = REVEALS.map(([title, text, bg], i) => ({ title, text: s.rev[i] ? text : 'Toca para descubrir ↓', bg: s.rev[i] ? bg : '#FFFFFF', toggle: () => this.save({ rev: { ...s.rev, [i]: !s.rev[i] } }) }));
+    const remembered = Object.values(s.mark).filter(Boolean).length;
+    const votes = Object.values(s.sk).reduce((a, b) => a + b, 0);
+    const mm = Math.floor(s.t / 60), ss = String(s.t % 60).padStart(2, '0');
+    return {
+      ...pv, indexOpen: s.idx, groups, toggleIndex: () => this.save({ idx: !s.idx }),
+      screenNum: s.p + 1, screenTotal: SCREENS.length, pct: Math.round((s.p + 1) / SCREENS.length * 100) + '%',
+      notLast: s.p < SCREENS.length - 1, nextLabel: NEXT[s.p] || 'Continuar ▶', prevVis: s.p > 0 ? 'visible' : 'hidden',
+      next: () => this.go(s.p + 1), prev: () => this.go(s.p - 1),
+      path, checkOpts, checkShown: s.chk >= 0, checkMsg: s.chk >= 0 ? CHECK[s.chk][1] : '',
+      order, orderDone: s.got >= STOPS.length,
+      timerText: mm + ':' + ss, timerLabel: s.run ? '⏸ Pausar' : (s.t === 0 ? '⏰ ¡Tiempo!' : '▶ Iniciar'),
+      timerToggle: () => this.toggleTimer(), timerReset: () => { clearInterval(this.timer); this.setState({ t: 300, run: false }); },
+      cards, socio, canDo, canDoCount, canDoAll: canDoCount === CANDO.length,
+      q, qNum: s.qi + 1, qTotal: QUIZ.length, score, nextQ: () => this.save({ qi: Math.min(QUIZ.length - 1, s.qi + 1) }),
+      spins: s.spins, spinText: s.spinIdx < 0 ? 'Giren la ruleta para ver la primera pregunta' : SPIN[s.spinIdx],
+      spinHint: s.spins >= 4 ? '¡Meta cumplida! Pueden seguir girando' : 'Meta: 4 giros',
+      spin: () => { let pool = SPIN.map((_, i) => i).filter(i => !s.used.includes(i)); let used = s.used; if (!pool.length) { pool = SPIN.map((_, i) => i).filter(i => i !== s.spinIdx); used = []; } const n = pool[Math.floor(Math.random() * pool.length)]; this.save({ spinIdx: n, spins: s.spins + 1, used: [...used, n] }); },
+      skills, topSkill, reveals, remembered,
+      reset: () => { clearInterval(this.timer); this.save({ ...INIT, t: 300, run: false }); try { window.scrollTo({ top: 0 }); } catch (e) {} }
+    };
+  }
+}
+</script>
+</body>
+</html>
